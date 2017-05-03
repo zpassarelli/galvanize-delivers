@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Galvanize Delivers</title>
+  <!-- Import Google Icon font -->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Import Materialize.css -->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css">
+  <style>
+    body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1 0 auto;
+    }
+
+    a {
+      color: white;
+    }
+
+    .hero {
+      margin-top: -32px;
+      height: 400px;
+      background-image: url("img/hero.jpg");
+      background-position: center;
+      padding-top: 100px;
+    }
+
+    i {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-wrapper orange lighten-1" style="padding: 0em 1em">
+      <a href="#" class="brand-logo">Galvanize Delivers</a>
+      <a href="#" data-activates="mobile-nav" class="right button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="./order.html">Order Delivery</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-nav">
+        <li><a href="./order.html">Order Delivery</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="hero center white-text">
+      <h1>Fine Dining, Delivered</h1>
+      <div>
+        <a href="./order.html"><div class="btn red waves-effect waves-light">Place an Order</div></a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col l4 s12">
+          <h5 class="valign-wrapper red-text"><i class="material-icons">shopping_basket</i>Shop Online</h5>
+          <p>
+            Using our convenient web app, you'll get all the power of gFood without having to call your order in. Order in your pajamas, order 24 hours a day, order on Christmas, we're here to serve you.
+          </p>
+        </div>
+        <div class="col l4 s12">
+          <h5 class="valign-wrapper red-text"><i class="material-icons">local_shipping</i> Fast Delivery</h5>
+          <p>
+            You've never seen ordering this quick. Our proprietary ordering rocket ship delivery team allows you to spend less time being hungry, and more time doing what matters most to you. We'd ask what that is, but gFood respects your privacy.
+          </p>
+        </div>
+        <div class="col l4 s12">
+          <h5 class="valign-wrapper red-text"><i class="material-icons">credit_card</i> Great Deals</h5>
+          <p>
+            Money: You've got it, we want it. But let it never be said we're not incredibly fair! Burger sales? Check. Pizza sales? Check. Burger and pizza sales?? Check, check, check! We seriously can't stop making deals.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="page-footer orange lighten-1 white-text">
+    <div class="container">
+      <div class="row">
+        <div class="col m8 s12">
+          <h5>Galvanize Delivers</h5>
+          <p>Fine dining, delivered.</p>
+        </div>
+        <div class="col m4 s12">
+          <h5>Navigation</h5>
+          <a href="#">Home</a>
+          <div></div>
+          <a href="./order.html">Order</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        &copy; Galvanize Delivers 2017
+      </div>
+    </div>
+  </footer>
+
+  <!-- Link jQuery, Materialize.js -->
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(".button-collapse").sideNav({edge: 'right'});
+    });
+  </script>
+</body>
+</html>
