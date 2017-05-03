@@ -23,6 +23,19 @@
     a {
       color: white;
     }
+
+    .card-action {
+      color: #ffa726;
+    }
+
+    .card-action:hover {
+      font-weight: bold;
+    }
+
+    .card-action:active {
+      color: #ef6c00;
+    }
+
   </style>
 </head>
 <body>
@@ -30,8 +43,12 @@
   <nav>
     <div class="nav-wrapper orange lighten-1" style="padding: 0em 1em">
       <a href="./index.html" class="brand-logo">Galvanize Delivers</a>
-      <ul class="right">
+      <a href="#" data-activates="mobile-nav" class="right button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
         <li class="active"><a href="#">Order Delivery</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-nav">
+        <li><a href="./index.html">Landing Page</a></li>
       </ul>
     </div>
   </nav>
@@ -39,16 +56,123 @@
   <main>
     <div class="container">
       <div class="row">
-        <div id="options" class="col m9 s12">
-          Stuff here
+        <div class="col l8 s12">
+          <h4>Menu</h4>
+          <div class="row">
+            <div class="col m6 s12">
+              <!-- Menu Item 1 -->
+              <div class="card medium">
+                  <div class="card-image">
+                    <img src="img/burger.jpg">
+                  </div>
+                  <div class="card-content">
+                    <h5>Royale with Cheese</h5>
+                    <p>$8.99</p>
+                  </div>
+                  <div class="card-action" id="royale">
+                    <span>ADD TO ORDER</span>
+                  </div>
+                </div>
+            </div>
+              <!-- Menu Item 2 -->
+            <div class="col m6 s12">
+              <div class="card medium">
+                  <div class="card-image">
+                    <img src="img/pizza.jpg">
+                  </div>
+                  <div class="card-content">
+                    <h5>Arugula Pie</h5>
+                    <p>$11.99</p>
+                  </div>
+                  <div class="card-action" id="pizza">
+                    <span>ADD TO ORDER</span>
+                  </div>
+                </div>
+            </div>
+              <!-- Menu Item 3 -->
+            <div class="col m6 s12">
+              <div class="card medium">
+                <div class="card-image">
+                  <img src="img/ribs.jpg">
+                </div>
+                <div class="card-content">
+                  <h5>Smoked Swine</h5>
+                  <p><strike>$14.99</strike> $9.99 <span class="red-text">*SALE*</span></p>
+                </div>
+                <div class="card-action" id="swine">
+                  <span>ADD TO ORDER</span>
+                </div>
+              </div>
+            </div>
+              <!-- Menu Item 4 -->
+            <div class="col m6 s12">
+              <div class="card medium">
+                <div class="card-image">
+                  <img src="img/ice_cream.jpg">
+                </div>
+                <div class="card-content">
+                  <h5>Ice Cream Biscuit</h5>
+                  <p>$7.99</p>
+                </div>
+                <div class="card-action" id="biscuit">
+                  <span>ADD TO ORDER</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div id="order" class="col m3 s12">
-          He'e yo ooda.
-          <form>
-            <i class="material-icons">account_circle</i>
-            <i class="material-icons">call</i>
-            <i class="material-icons">business</i>
-          </form>
+        <div class="col l4 s12">
+          <div class="row">
+            <div class="col s12">
+              <h4>Order</h4>
+              <table class="striped">
+                <thead>
+                  <tr>
+                    <td>Item Name</td>
+                    <td class="right">Price</td>
+                  </tr>
+                </thead>
+                <tbody id="order">
+                  <!-- jQuery populates order items here -->
+                </tbody>
+              </table>
+            </div>
+            <div class="col s6 offset-s6">
+              <table>
+                <tbody>
+                  <tr>
+                    <td class="center">Subtotal:</td>
+                    <td class="right" id="subtotal">$0.00</td>
+                  </tr>
+                  <tr>
+                    <td class="center">Tax:</td>
+                    <td class="right" id="tax">$0.00</td>
+                  </tr>
+                  <tr>
+                    <td class="center">Total:</td>
+                    <td class="right" id="total">$0.00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <form>
+            <div class="input-field col s12">
+              <i class="material-icons prefix red-text">account_circle</i>
+              <input type="text" id="name" name="name" placeholder="Name" class="validate" required>
+            </div>
+            <div class="input-field col s12">
+              <i class="material-icons prefix red-text">call</i>
+              <input type="tel" id="phone" name="phone" placeholder="Phone" class="validate" required>
+            </div>
+            <div class="input-field col s12">
+              <i class="material-icons prefix red-text">business</i>
+              <textarea id="address" name="address" placeholder="Address" class="materialize-textarea validate" required></textarea>
+            </div>
+            <div class="col s12 center">
+              <button class="btn red waves-effect waves-light" type="submit">Place Order</button>
+            </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -79,5 +203,38 @@
   <!-- Link jQuery, Materialize.js -->
   <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(".button-collapse").sideNav({edge: 'right'});
+
+      var menu = {
+        'royale':'Royale with Cheese',
+        'royale price': 8.99,
+        'pizza':'Arugula Pie',
+        'pizza price': 11.99,
+        'swine':'Smoked Swine',
+        'swine price': 9.99,
+        'biscuit':'Ice Cream Biscuit',
+        'biscuit price': 7.99
+      };
+
+      var order = [];
+
+      $(".card-action").click(function(){
+        $("#order").append("<tr><td>" + menu[this.id] + "</td><td class=\"right\"> $" + menu[this.id+" price"] + "</td></tr>");
+        order.push(menu[this.id+" price"]);
+        var subtotal = 0;
+        for(let i = 0; i < order.length; i++){
+          subtotal += order[i];
+        }
+        $("#subtotal").html("$"+subtotal.toFixed(2));
+        var tax = subtotal/10
+        $("#tax").html("$"+tax.toFixed(2));
+        var total = subtotal + tax;
+        $("#total").html("$"+total.toFixed(2));
+
+      });
+    });
+  </script>
 </body>
 </html>
